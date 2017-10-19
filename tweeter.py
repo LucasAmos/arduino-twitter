@@ -37,12 +37,10 @@ def user_tweet(thandle):
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode("utf-8")
 
 
-    ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(statuses[0].created_at, '%a %b %d %H:%M:%S +0000 %Y'))
+    ts = time.strptime('%Y-%m-%d %H:%M:%S', time.strptime(statuses[0].created_at, '%a %b %d %H:%M:%S +0000 %Y'))
 
     print(type(ts))
-    t = datetime.datetime(ts)
-    t = time.mktime(t.timetuple())
-    print(t)
+    print(ts)
     tweet = {'createdAt': statuses[0].created_at, 'text': text}
 
 
