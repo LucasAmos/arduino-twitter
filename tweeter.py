@@ -32,7 +32,9 @@ api = twitter.Api(
 def user_tweet(thandle):
     statuses = api.GetUserTimeline(screen_name=thandle)
 
-    tweet = {'createdAt': statuses[0].created_at, 'text': statuses[0].text}
+    text = str(statuses[0].text)
+
+    tweet = {'createdAt': statuses[0].created_at, 'text': text}
 
     print type(statuses[0].text)
 
