@@ -36,15 +36,10 @@ def user_tweet(thandle):
     text = statuses[0].text
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode("utf-8")
 
-
     ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(statuses[0].created_at, '%a %b %d %H:%M:%S +0000 %Y'))
-
     ts = time.strptime(ts,'%Y-%m-%d %H:%M:%S')
 
-    print(type(ts))
-    print(ts)
-    tweet = {'createdAt': statuses[0].created_at, 'text': text}
-    print(calendar.timegm(ts))
+    tweet = {'createdAt': ts, 'text': text}
     return tweet
 
 
