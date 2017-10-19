@@ -9,6 +9,7 @@
 
 # Requirement - pip install python-twitter
 from unidecode import unidecode
+import unicodedata
 import sys, twitter
 
 
@@ -33,6 +34,7 @@ def user_tweet(thandle):
     statuses = api.GetUserTimeline(screen_name=thandle)
 
     text = statuses[0].text
+    text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore')
 
     tweet = {'createdAt': statuses[0].created_at, 'text': text}
 
