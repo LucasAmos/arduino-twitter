@@ -10,7 +10,7 @@
 # Requirement - pip install python-twitter
 import unicodedata
 import sys, twitter
-import time, datetime
+import time, datetime, pytz, calendar
 
 
 api = twitter.Api()
@@ -44,7 +44,8 @@ def user_tweet(thandle):
     print(type(ts))
     print(ts)
     tweet = {'createdAt': statuses[0].created_at, 'text': text}
-    print(ts.timestamp())
+    #print(ts.timestamp())
+    print(to_datetime_from_utc(ts))
 
     return tweet
 
@@ -53,3 +54,6 @@ if __name__ == "__main__":
     latest_tweet = user_tweet(sys.argv[1])
     print(latest_tweet)
 
+
+def to_datetime_from_utc(time_tuple):
+    return datetime.fromtimestamp(calendar.timegm(time_tuple), tz=pytz.utc)
