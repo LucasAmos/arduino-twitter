@@ -36,7 +36,9 @@ def user_tweet(thandle):
     text = statuses[0].text
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore')
 
-    tweet = {'createdAt': statuses[0].created_at, 'text': text}
+    time = statuses[0].created_at
+
+    tweet = {'createdAt': time, 'text': text}
 
 
     return tweet
@@ -45,3 +47,4 @@ def user_tweet(thandle):
 if __name__ == "__main__":
     latest_tweet = user_tweet(sys.argv[1])
     print (latest_tweet)
+
