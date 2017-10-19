@@ -44,7 +44,7 @@ def user_tweet(thandle):
     print(type(ts))
     print(ts)
     tweet = {'createdAt': statuses[0].created_at, 'text': text}
-
+    print(ts.timestamp())
 
     return tweet
 
