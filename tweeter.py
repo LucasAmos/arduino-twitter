@@ -8,9 +8,9 @@
 # Adapted from https://github.com/bear/python-twitter
 
 # Requirement - pip install python-twitter
-from unidecode import unidecode
 import unicodedata
 import sys, twitter
+import time
 
 
 api = twitter.Api()
@@ -36,8 +36,11 @@ def user_tweet(thandle):
     text = statuses[0].text
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode("utf-8")
 
-    #print(type(text2))
+    time = statuses[0].created_at
 
+    ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y'))
+
+    print(time)
     tweet = {'createdAt': statuses[0].created_at, 'text': text}
 
 
@@ -46,5 +49,5 @@ def user_tweet(thandle):
 
 if __name__ == "__main__":
     latest_tweet = user_tweet(sys.argv[1])
-    print (latest_tweet)
+    print(latest_tweet)
 
