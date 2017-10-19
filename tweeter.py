@@ -34,9 +34,9 @@ def user_tweet(thandle):
     statuses = api.GetUserTimeline(screen_name=thandle)
 
     text = statuses[0].text
-    text2 = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore')
+    text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode("utf-8")
 
-    print(type(text2))
+    #print(type(text2))
 
     tweet = {'createdAt': statuses[0].created_at, 'text': text}
 
