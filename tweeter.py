@@ -43,4 +43,4 @@ def user_tweet(thandle):
 
 if __name__ == "__main__":
     latest_tweet = user_tweet(sys.argv[1])
-    print latest_tweet
+    print (latest_tweet)
