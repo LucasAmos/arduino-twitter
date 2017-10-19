@@ -11,6 +11,7 @@
 
 import sys, twitter
 
+
 api = twitter.Api()
 
 # Populate your twitter API details below
@@ -31,7 +32,7 @@ api = twitter.Api(
 def user_tweet(thandle):
     statuses = api.GetUserTimeline(screen_name=thandle)
 
-    tweet = {'createdAt': statuses[0].created_at, 'text': statuses[0].text.encode('utf-8')}
+    tweet = {'createdAt': statuses[0].created_at, 'text': statuses[0].text.decode('utf-8')}
 
 
     return tweet
