@@ -44,9 +44,7 @@ def user_tweet(thandle):
     print(type(ts))
     print(ts)
     tweet = {'createdAt': statuses[0].created_at, 'text': text}
-    #print(ts.timestamp())
-    print(to_datetime_from_utc(ts))
-
+    print(calendar.timegm(ts))
     return tweet
 
 
@@ -55,5 +53,3 @@ if __name__ == "__main__":
     print(latest_tweet)
 
 
-def to_datetime_from_utc(time_tuple):
-    return datetime.fromtimestamp(calendar.timegm(time_tuple), tz=pytz.utc)
