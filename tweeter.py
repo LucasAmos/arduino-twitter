@@ -8,7 +8,7 @@
 # Adapted from https://github.com/bear/python-twitter
 
 # Requirement - pip install python-twitter
-
+from unidecode import unidecode
 import sys, twitter
 
 
@@ -32,8 +32,9 @@ api = twitter.Api(
 def user_tweet(thandle):
     statuses = api.GetUserTimeline(screen_name=thandle)
 
-    tweet = {'createdAt': statuses[0].created_at, 'text': statuses[0].text.encode('utf-8')}
+    tweet = {'createdAt': statuses[0].created_at, 'text': statuses[0].text}
 
+    print type(statuses[0].text)
 
     return tweet
 
