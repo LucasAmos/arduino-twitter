@@ -33,6 +33,8 @@ def user_tweet(thandle):
 
     tweet = {'createdAt': statuses[0].created_at, 'text':statuses[0].text}
 
+    print statuses[0].text
+
     return tweet
 
 
