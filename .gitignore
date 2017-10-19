@@ -1,0 +1,40 @@
+database.py
+run.py
+sensordata.db
+manage.py
+
+*.py[co]
+*.DS_*
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#Mr Developer
+venv
+*.pyc
+
+
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/sensors.iml
+.idea/workspace.xml
