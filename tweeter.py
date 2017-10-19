@@ -39,7 +39,7 @@ def user_tweet(thandle):
 
     ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(statuses[0].created_at, '%a %b %d %H:%M:%S +0000 %Y'))
 
-    print((ts-datetime.datetime(1970,1,1)).total_seconds())
+    print(ts.type)
     tweet = {'createdAt': statuses[0].created_at, 'text': text}
 
 
