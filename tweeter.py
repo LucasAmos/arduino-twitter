@@ -33,8 +33,6 @@ api = twitter.Api(
 def user_tweet(thandle):
     statuses = api.GetUserTimeline(screen_name=thandle)
 
-    print(statuses[0])
-
     text = statuses[0].text
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode("utf-8")
 
