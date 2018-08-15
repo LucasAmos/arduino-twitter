@@ -17,10 +17,10 @@ api = twitter.Api()
 
 # Populate your twitter API details below
 
-consumer_key = 'kgGtb2Exedpdt95rxjmDH226b'
-consumer_secret = 'Xp5MorhSVi4bmY9JvCrnnEulGsl5LOEn7esUKGBvy0tGh5VzsT'
-access_token_key = '910943517136089088-4eaC7ivHJhv6S0O9sboMAYaozy9lXVs'
-access_token_secret = 'lbYf3Tqg2oUCUFQb03l1MNQ6n1RtFnGotVFUTH6EsI8qX'
+consumer_key = ''
+consumer_secret = ''
+access_token_key = ''
+access_token_secret = ''
 
 api = twitter.Api(
     consumer_key=consumer_key,
